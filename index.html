@@ -1,759 +1,1648 @@
-<!DOCTYPE1 html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gluten-Free Sweet Tooth | Ultimate GF Desserts</title>
-  
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celeste — Beginner's Gluten-Free Dessert Recipes</title>
+    
+    <!-- Google Fonts: Playfair Display (Serif display) & Plus Jakarta Sans (Clean modern sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    /* CSS Variables & Theme Setup */
-    :root {
-      --bg: #FAFAFA;
-      --surface: #FFFFFF;
-      --text-main: #1A1A1A;
-      --text-muted: #666666;
-      --primary: #D96B43;
-      --primary-hover: #C25932;
-      --accent-bg: #F9ECE8;
-      --border: #EEEEEE;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      --radius: 16px;
-      --transition: all 0.25s ease-in-out;
-    }
+    <style>
+        :root {
+            --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            
+            /* Refined clean editorial palette */
+            --accent: #b87d2b; /* Warm Bronze Gold */
+            --accent-hover: #96611c;
+            --accent-soft: #f7ede0;
+            --accent-light: #fdfaf6;
+            
+            --bg-main: #faf8f5;
+            --bg-card: #ffffff;
+            --bg-alt: #f4f0e8;
+            
+            --text-main: #1c1917;
+            --text-muted: #66615b;
+            --text-light: #9c958d;
+            
+            --border: #e8e4d9;
+            --border-soft: #f2eee6;
+            
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            
+            --shadow-sm: 0 2px 8px rgba(28, 25, 23, 0.03);
+            --shadow-md: 0 8px 24px rgba(28, 25, 23, 0.05);
+            --shadow-lg: 0 16px 40px rgba(28, 25, 23, 0.08);
+            
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg);
-      color: var(--text-main);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    /* Header & Navigation */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.25rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        header {
+            background-color: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid var(--border-soft);
+            position: sticky;
+            top: 0;
+            z-index: 90;
+            backdrop-filter: blur(12px);
+        }
 
-    .logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--text-main);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
 
-    .logo span {
-      color: var(--primary);
-    }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
 
-    .badge {
-      background: var(--accent-bg);
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.25rem 0.6rem;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            background-color: var(--text-main);
+            color: var(--bg-main);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-weight: 600;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
 
-    /* Hero Section */
-    .hero {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem 2rem;
-      text-align: center;
-    }
+        .brand-text-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            line-height: 1;
+        }
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 1rem;
-      line-height: 1.15;
-    }
+        .brand-text-sub {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 3px;
+        }
 
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
-    }
+        .saved-badge-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 10px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
 
-    /* Search & Filter Controls */
-    .controls {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      align-items: center;
-      margin-bottom: 3rem;
-    }
+        .saved-badge-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
 
-    .search-bar {
-      width: 100%;
-      max-width: 500px;
-      position: relative;
-    }
+        .hero {
+            text-align: center;
+            padding: 56px 0 32px;
+        }
 
-    .search-bar input {
-      width: 100%;
-      padding: 1rem 1.25rem;
-      border-radius: 50px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      font-size: 1rem;
-      font-family: inherit;
-      box-shadow: var(--shadow);
-      outline: none;
-      transition: var(--transition);
-    }
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--accent-light);
+            color: var(--accent-hover);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
 
-    .search-bar input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 10px 30px rgba(217, 107, 67, 0.15);
-    }
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3.25rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            line-height: 1.15;
+        }
 
-    .filters {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+        .hero-title span {
+            font-style: italic;
+            color: var(--accent);
+            font-weight: 400;
+        }
 
-    .filter-btn {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 0.5rem 1.25rem;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: var(--transition);
-    }
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 620px;
+            margin: 0 auto 28px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
 
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
+        .beginner-notice {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 18px 24px;
+            max-width: 740px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-align: left;
+            color: var(--text-main);
+            box-shadow: var(--shadow-sm);
+        }
 
-    /* Recipe Grid */
-    .recipes-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem 5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
-    }
+        .beginner-notice-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            background: var(--accent-soft);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition);
-    }
+        .beginner-notice-text {
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: var(--text-muted);
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    }
+        .beginner-notice-text strong {
+            color: var(--text-main);
+            font-weight: 700;
+        }
 
-    .card-img-wrapper {
-      position: relative;
-      height: 200px;
-      background-color: #EEE;
-    }
+        .controls-wrapper {
+            margin: 40px 0 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
 
-    .card-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 520px;
+        }
 
-    .card-tag {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(4px);
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border-radius: 40px;
+            border: 1px solid var(--border);
+            font-family: var(--font-main);
+            font-size: 0.92rem;
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
 
-    .card-content {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(184, 125, 43, 0.12);
+        }
 
-    .card-meta {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
 
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--text-main);
-    }
+        .category-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-    .card-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
-    }
+        .tab-btn {
+            padding: 10px 22px;
+            border-radius: 30px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
 
-    .btn-view {
-      background: var(--accent-bg);
-      color: var(--primary);
-      border: none;
-      padding: 0.75rem;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      width: 100%;
-      transition: var(--transition);
-    }
+        .tab-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
 
-    .btn-view:hover {
-      background: var(--primary);
-      color: white;
-    }
+        .tab-btn.active {
+            background-color: var(--text-main);
+            color: #ffffff;
+            border-color: var(--text-main);
+            box-shadow: var(--shadow-sm);
+        }
 
-    /* Modal Styling */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(5px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      opacity: 0;
-      pointer-events: none;
-      transition: var(--transition);
-      padding: 1rem;
-    }
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 28px;
+            margin-bottom: 70px;
+        }
 
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: all;
-    }
+        .recipe-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
 
-    .modal {
-      background: var(--surface);
-      width: 100%;
-      max-width: 700px;
-      max-height: 90vh;
-      border-radius: var(--radius);
-      overflow-y: auto;
-      position: relative;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-      transform: translateY(20px);
-      transition: var(--transition);
-    }
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
 
-    .modal-overlay.active .modal {
-      transform: translateY(0);
-    }
+        .card-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: var(--bg-alt);
+        }
 
-    .modal-header {
-      position: relative;
-      height: 250px;
-    }
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
 
-    .modal-header img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+        .recipe-card:hover .card-img {
+            transform: scale(1.05);
+        }
 
-    .close-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: white;
-      border: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      font-size: 1.25rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: var(--transition);
-      z-index: 10;
-    }
+        .card-fav-btn {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.92);
+            border: 1px solid var(--border-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            z-index: 2;
+        }
 
-    .close-btn:hover {
-      transform: scale(1.1);
-    }
+        .card-fav-btn:hover, .card-fav-btn.active {
+            background-color: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
 
-    .modal-body {
-      padding: 2rem;
-    }
+        .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
 
-    .modal-title {
-      font-size: 1.75rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-    }
+        .card-category-badge {
+            align-self: flex-start;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            background-color: var(--accent-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            margin-bottom: 12px;
+        }
 
-    .modal-stats {
-      display: flex;
-      gap: 1.5rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1rem;
-      margin-bottom: 1.5rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            line-height: 1.3;
+            letter-spacing: -0.2px;
+        }
 
-    .recipe-section {
-      margin-bottom: 1.5rem;
-    }
+        .card-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.5;
+        }
 
-    .recipe-section h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.75rem;
-      color: var(--primary);
-    }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-soft);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
 
-    .recipe-section ul, .recipe-section ol {
-      padding-left: 1.25rem;
-      color: #333;
-    }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-    .recipe-section li {
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 70px 20px;
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            border: 1px dashed var(--border);
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
+        .empty-state h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
 
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2.2rem; }
-      .recipes-grid { grid-template-columns: 1fr; }
-      .modal-body { padding: 1.25rem; }
-    }
-  </style>
+        .empty-state p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(28, 25, 23, 0.6);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            background-color: var(--bg-card);
+            width: 100%;
+            max-width: 860px;
+            max-height: 90vh;
+            border-radius: var(--radius-lg);
+            overflow-y: auto;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(20px);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .modal-close-btn:hover {
+            background-color: var(--text-main);
+            color: #ffffff;
+        }
+
+        .modal-hero-img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+        }
+
+        .modal-content {
+            padding: 36px;
+        }
+
+        .modal-badge-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .modal-title {
+            font-family: var(--font-heading);
+            font-size: 2.3rem;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            line-height: 1.2;
+            letter-spacing: -0.3px;
+        }
+
+        .modal-desc {
+            font-size: 1.02rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            background-color: var(--bg-alt);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin-bottom: 32px;
+            text-align: center;
+            border: 1px solid var(--border-soft);
+        }
+
+        .stat-item .stat-lbl {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .stat-item .stat-val {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .servings-stepper {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            margin-top: 2px;
+        }
+
+        .step-btn {
+            border: none;
+            background: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--accent);
+            cursor: pointer;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .step-btn:hover {
+            color: var(--accent-hover);
+        }
+
+        .recipe-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.35fr;
+            gap: 36px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ingredients-list {
+            list-style: none;
+        }
+
+        .ingredient-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border);
+            font-size: 0.92rem;
+            cursor: pointer;
+            user-select: none;
+            transition: var(--transition);
+        }
+
+        .ingredient-check {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1.5px solid var(--text-light);
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .ingredient-row.checked .ingredient-check {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: #ffffff;
+        }
+
+        .ingredient-row.checked .ingredient-text {
+            text-decoration: line-through;
+            color: var(--text-light);
+        }
+
+        .ingredient-amount {
+            font-weight: 700;
+            color: var(--accent-hover);
+        }
+
+        .instructions-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 48px;
+            margin-bottom: 22px;
+        }
+
+        .step-item::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background-color: var(--accent-light);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .step-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .beginner-tip-box {
+            background-color: var(--accent-light);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: var(--radius-sm);
+            margin-top: 28px;
+            font-size: 0.88rem;
+            color: var(--text-main);
+        }
+
+        .beginner-tip-box strong {
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 800;
+        }
+
+        .modal-footer {
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            background-color: var(--bg-card);
+            color: var(--text-main);
+        }
+
+        .action-btn:hover {
+            background-color: var(--bg-alt);
+        }
+
+        .action-btn.primary {
+            background-color: var(--text-main);
+            color: #ffffff;
+            border-color: var(--text-main);
+        }
+
+        .action-btn.primary:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-soft);
+            padding: 48px 0 28px;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .recipe-details-grid { grid-template-columns: 1fr; gap: 28px; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .modal-content { padding: 24px; }
+            .modal-hero-img { height: 240px; }
+        }
+
+        @media print {
+            header, footer, .controls-wrapper, .hero, .modal-close-btn, .action-btn, .card-fav-btn, .beginner-notice {
+                display: none !important;
+            }
+            body { background: #ffffff; color: #000000; }
+            .modal-overlay { position: static; opacity: 1; visibility: visible; background: none; padding: 0; }
+            .modal-card { max-width: 100%; box-shadow: none; border-radius: 0; transform: none; max-height: none; }
+            .recipe-details-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="nav-container">
-      <a href="#" class="logo">
-        🍰 Sweet<span>Free</span>
-      </a>
-      <span class="badge">100% Gluten-Free</span>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Naturally Delicious.<br>Zero Gluten.</h1>
-    <p>Indulge in our collection of rigorously tested, outrageously rich dessert recipes that never compromise on taste or texture.</p>
-    
-    <div class="controls">
-      <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search recipes (e.g. chocolate, cake, nut-free)...">
-      </div>
-      
-      <div class="filters" id="filterContainer">
-        <button class="filter-btn active" data-category="all">All Desserts</button>
-        <button class="filter-btn" data-category="chocolate">Chocolate</button>
-        <button class="filter-btn" data-category="fruit">Fruit & Berry</button>
-        <button class="filter-btn" data-category="easy">Quick & Easy</button>
-        <button class="filter-btn" data-category="dairy-free">Dairy-Free Opt.</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main Recipe Grid -->
-  <main class="recipes-grid" id="recipeGrid">
-    <!-- Cards will be populated by JavaScript -->
-  </main>
-
-  <!-- Recipe Details Modal -->
-  <div class="modal-overlay" id="recipeModal">
-    <div class="modal">
-      <button class="close-btn" id="closeModal">&times;</button>
-      <div class="modal-header">
-        <img id="modalImg" src="" alt="Recipe Detail Image">
-      </div>
-      <div class="modal-body">
-        <h2 class="modal-title" id="modalTitle"></h2>
-        <div class="modal-stats">
-          <span>⏱️ <span id="modalTime"></span></span>
-          <span>📊 <span id="modalDifficulty"></span></span>
-          <span>🏷️ <span id="modalTag"></span></span>
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="brand">
+                <div class="brand-icon">C</div>
+                <div>
+                    <div class="brand-text-title">Celeste</div>
+                    <div class="brand-text-sub">100% Gluten-Free Desserts</div>
+                </div>
+            </a>
+            <button class="saved-badge-btn" id="viewSavedBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span>Saved Recipes (<span id="savedCount">0</span>)</span>
+            </button>
         </div>
-        
-        <div class="recipe-section">
-          <h3>Ingredients</h3>
-          <ul id="modalIngredients"></ul>
-        </div>
-        
-        <div class="recipe-section">
-          <h3>Instructions</h3>
-          <ol id="modalInstructions"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+    </header>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 SweetFree Recipes. Baking joy into every gluten-free bite.</p>
-  </footer>
-
-  <!-- JavaScript Application Logic -->
-  <script>
-    // Recipe Data Array
-    const recipes = [
-      {
-        id: 1,
-        title: "Flourless Chocolate Fudge Cake",
-        category: "chocolate",
-        time: "45 mins",
-        difficulty: "Easy",
-        tag: "Nut-Free",
-        desc: "An insanely rich, decadent chocolate cake with a melt-in-your-mouth fudgy interior and crispy top crust.",
-        image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
-        ingredients: [
-          "1 cup (200g) high-quality dark chocolate chips (60%+)",
-          "1/2 cup (115g) unsalted butter",
-          "3/4 cup granulated sugar",
-          "3 large eggs, at room temperature",
-          "1/2 cup unsweetened cocoa powder",
-          "1 tsp pure vanilla extract",
-          "1/4 tsp salt"
-        ],
-        instructions: [
-          "Preheat oven to 375°F (190°C). Grease an 8-inch springform pan and dust with cocoa powder.",
-          "Melt the butter and dark chocolate together in a heatproof bowl over a pot of simmering water (or microwave in 30s bursts), stirring until smooth.",
-          "Remove from heat and whisk in the sugar, vanilla, and salt.",
-          "Add eggs one at a time, whisking thoroughly after each addition until smooth and glossy.",
-          "Sift in the cocoa powder and gently fold until just combined.",
-          "Pour batter into pan and bake for 25 minutes until the center is just set.",
-          "Cool completely before slicing. Dust with powdered sugar if desired."
-        ]
-      },
-      {
-        id: 2,
-        title: "Classic Lemon Raspberry Crisp",
-        category: "fruit",
-        time: "40 mins",
-        difficulty: "Easy",
-        tag: "Dairy-Free Opt.",
-        desc: "Tart fresh raspberries tossed with zesty lemon, baked beneath a golden cinnamon oat crumble.",
-        image: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=80",
-        ingredients: [
-          "4 cups fresh raspberries",
-          "1 tbsp lemon juice + 1 tsp lemon zest",
-          "2 tbsp maple syrup",
-          "1 cup certified gluten-free rolled oats",
-          "1/2 cup almond flour",
-          "1/3 cup brown sugar",
-          "1/2 tsp ground cinnamon",
-          "1/4 cup coconut oil or melted butter"
-        ],
-        instructions: [
-          "Preheat oven to 350°F (175°C).",
-          "Toss raspberries, lemon juice, lemon zest, and maple syrup together in an 8x8 baking dish.",
-          "In a separate bowl, mix oats, almond flour, brown sugar, cinnamon, and melted coconut oil until crumbly.",
-          "Evenly spread the crumble mixture over the raspberry filling.",
-          "Bake for 30 minutes until the fruit is bubbling and the topping is golden brown.",
-          "Serve warm with a scoop of coconut milk ice cream."
-        ]
-      },
-      {
-        id: 3,
-        title: "Fudgy Almond Flour Brownies",
-        category: "easy",
-        time: "35 mins",
-        difficulty: "Easy",
-        tag: "Grain-Free",
-        desc: "Ultra-chewy, thick brownies made with simple nut flour that rival any traditional bakery brownie.",
-        image: "https://images.unsplash.com/photo-1607920591413-4ec007e70023?auto=format&fit=crop&w=800&q=80",
-        ingredients: [
-          "1 1/2 cups blanched almond flour",
-          "1/2 cup cocoa powder",
-          "1/2 tsp baking soda",
-          "1/4 tsp sea salt",
-          "1/3 cup melted coconut oil",
-          "1/3 cup pure maple syrup",
-          "2 large eggs",
-          "1/2 cup dark chocolate chips"
-        ],
-        instructions: [
-          "Preheat oven to 350°F (175°C) and line an 8x8-inch pan with parchment paper.",
-          "Whisk together dry ingredients: almond flour, cocoa powder, baking soda, and salt.",
-          "In a separate bowl, whisk together coconut oil, maple syrup, and eggs.",
-          "Combine wet and dry ingredients, then fold in dark chocolate chips.",
-          "Spread evenly into the pan and bake for 20-22 minutes (do not overbake).",
-          "Let cool completely in the pan to allow them to set before cutting into squares."
-        ]
-      },
-      {
-        id: 4,
-        title: "No-Bake Berry Cheesecake",
-        category: "dairy-free",
-        time: "20 mins (+4hr chill)",
-        difficulty: "Medium",
-        tag: "Vegan / DF",
-        desc: "A velvety cashew-cream cheesecake infused with vanilla and topped with a vibrant homemade blueberry swirl.",
-        image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80",
-        ingredients: [
-          "1 1/2 cups raw cashews (soaked in boiling water for 30 mins)",
-          "1 cup GF oat flour + 1/2 cup pecans (for crust)",
-          "3 tbsp maple syrup (for crust) + 1/3 cup (for filling)",
-          "1/4 cup melted coconut oil (for crust) + 1/3 cup (for filling)",
-          "1/2 cup full-fat coconut cream",
-          "2 tbsp fresh lemon juice",
-          "1 cup fresh blueberries, mashed into a purée"
-        ],
-        instructions: [
-          "Pulse pecans, oat flour, 3 tbsp maple syrup, and 1/4 cup coconut oil in a food processor until a dough forms. Press into a lined springform pan.",
-          "Drain cashews. Blend cashews, 1/3 cup coconut oil, coconut cream, 1/3 cup maple syrup, and lemon juice in a high-speed blender until silky smooth.",
-          "Pour half the filling over the crust. Swirl in mashed blueberries, then add remaining filling and swirl again.",
-          "Freeze for at least 4 hours to set. Slice and let sit 10 mins before serving."
-        ]
-      },
-      {
-        id: 5,
-        title: "Chewy GF Chocolate Chip Cookies",
-        category: "easy",
-        time: "25 mins",
-        difficulty: "Easy",
-        tag: "Classic",
-        desc: "Golden edges, soft chewy centers, and packed with chocolate chunks. No one will guess they are gluten-free!",
-        image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80",
-        ingredients: [
-          "2 cups 1-to-1 Gluten-Free Baking Flour (with xanthan gum)",
-          "1/2 tsp baking soda",
-          "1/2 tsp salt",
-          "1/2 cup unsalted butter, softened",
-          "1/2 cup dark brown sugar",
-          "1/4 cup granulated sugar",
-          "1 large egg + 1 egg yolk",
-          "1 tsp vanilla extract",
-          "1 cup chocolate chunks or chips"
-        ],
-        instructions: [
-          "Whisk GF flour, baking soda, and salt in a bowl; set aside.",
-          "Cream softened butter, brown sugar, and white sugar together until fluffy.",
-          "Beat in egg, egg yolk, and vanilla.",
-          "Gradually mix in dry ingredients until dough forms. Fold in chocolate chunks.",
-          "Scoop balls of dough onto a lined baking sheet. Chill dough for 30 mins in the fridge.",
-          "Bake at 350°F (175°C) for 11-13 minutes until edges are light golden brown."
-        ]
-      },
-      {
-        id: 6,
-        title: "Vanilla Bean Panna Cotta",
-        category: "fruit",
-        time: "15 mins (+3hr chill)",
-        difficulty: "Easy",
-        tag: "Naturally GF",
-        desc: "Silky smooth Italian dessert infused with real vanilla bean and topped with a fresh strawberry passionfruit gelée.",
-        image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80",
-        ingredients: [
-          "1 cup whole milk (or heavy cream)",
-          "1 1/2 cups heavy cream",
-          "1 packet (2 1/4 tsp) unflavored gelatin powder",
-          "1/3 cup sugar",
-          "1 vanilla bean, split & scraped (or 1 tbsp vanilla paste)",
-          "1 cup fresh strawberries, diced for topping"
-        ],
-        instructions: [
-          "Pour milk into a small bowl and sprinkle gelatin over top; let stand 5 minutes to bloom.",
-          "In a saucepan, warm heavy cream, sugar, and vanilla bean seeds over medium heat until sugar dissolves (do not boil).",
-          "Remove cream from heat, add gelatin mixture, and whisk until fully dissolved.",
-          "Pour mixture into ramekins or glasses. Refrigerate for at least 3 hours until set.",
-          "Top with fresh strawberries before serving."
-        ]
-      }
-    ];
-
-    // DOM Elements
-    const recipeGrid = document.getElementById('recipeGrid');
-    const searchInput = document.getElementById('searchInput');
-    const filterContainer = document.getElementById('filterContainer');
-    const recipeModal = document.getElementById('recipeModal');
-    const closeModal = document.getElementById('closeModal');
-
-    // Modal Details Elements
-    const modalImg = document.getElementById('modalImg');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalTime = document.getElementById('modalTime');
-    const modalDifficulty = document.getElementById('modalDifficulty');
-    const modalTag = document.getElementById('modalTag');
-    const modalIngredients = document.getElementById('modalIngredients');
-    const modalInstructions = document.getElementById('modalInstructions');
-
-    let currentCategory = 'all';
-
-    // Render Cards Function
-    function renderRecipes() {
-      const query = searchInput.value.toLowerCase().trim();
-
-      const filtered = recipes.filter(recipe => {
-        const matchesCategory = currentCategory === 'all' || 
-          (currentCategory === 'chocolate' && recipe.category === 'chocolate') ||
-          (currentCategory === 'fruit' && recipe.category === 'fruit') ||
-          (currentCategory === 'easy' && recipe.category === 'easy') ||
-          (currentCategory === 'dairy-free' && (recipe.category === 'dairy-free' || recipe.tag.includes('DF') || recipe.tag.includes('Vegan')));
-        
-        const matchesSearch = recipe.title.toLowerCase().includes(query) || 
-                              recipe.desc.toLowerCase().includes(query) ||
-                              recipe.tag.toLowerCase().includes(query);
-
-        return matchesCategory && matchesSearch;
-      });
-
-      recipeGrid.innerHTML = '';
-
-      if (filtered.length === 0) {
-        recipeGrid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-muted);">
-          <h3>No delicious recipes found!</h3>
-          <p>Try searching for something else like "chocolate" or "easy".</p>
-        </div>`;
-        return;
-      }
-
-      filtered.forEach(recipe => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-          <div class="card-img-wrapper">
-            <img class="card-img" src="${recipe.image}" alt="${recipe.title}" loading="lazy">
-            <span class="card-tag">${recipe.tag}</span>
-          </div>
-          <div class="card-content">
-            <div class="card-meta">
-              <span>⏱️ ${recipe.time}</span>
-              <span>📊 ${recipe.difficulty}</span>
+    <main class="container">
+        <section class="hero">
+            <div class="hero-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                100% Gluten-Free & Beginner Friendly
             </div>
-            <h2 class="card-title">${recipe.title}</h2>
-            <p class="card-desc">${recipe.desc}</p>
-            <button class="btn-view" onclick="openModal(${recipe.id})">View Recipe</button>
-          </div>
-        `;
-        recipeGrid.appendChild(card);
-      });
-    }
+            <h1 class="hero-title">Sweet Bakes & Treats Made <span>Simple.</span></h1>
+            <p class="hero-sub">15 tested gluten-free dessert recipes with simple cup & spoon measurements—specially designed for beginning bakers.</p>
+            
+            <div class="beginner-notice">
+                <div class="beginner-notice-icon">💡</div>
+                <div class="beginner-notice-text">
+                    <strong>Beginner Baker Tip:</strong> When measuring gluten-free flour in cups, spoon the flour into the measuring cup and sweep off the top with a knife. Don't scoop straight from the bag so your treats stay light and tender!
+                </div>
+            </div>
+        </section>
 
-    // Modal Functions
-    window.openModal = function(id) {
-      const recipe = recipes.find(r => r.id === id);
-      if (!recipe) return;
+        <section class="controls-wrapper">
+            <div class="search-box">
+                <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="searchInput" placeholder="Search by name or ingredient (e.g., chocolate, lemon, peanut butter)...">
+            </div>
 
-      modalImg.src = recipe.image;
-      modalTitle.textContent = recipe.title;
-      modalTime.textContent = recipe.time;
-      modalDifficulty.textContent = recipe.difficulty;
-      modalTag.textContent = recipe.tag;
+            <div class="category-tabs" id="categoryTabs">
+                <button class="tab-btn active" data-category="all">All Recipes (15)</button>
+                <button class="tab-btn" data-category="cakes">Cakes & Tarts</button>
+                <button class="tab-btn" data-category="cookies">Cookies & Bars</button>
+                <button class="tab-btn" data-category="nobake">No-Bake & Chilled</button>
+            </div>
+        </section>
 
-      modalIngredients.innerHTML = recipe.ingredients.map(i => `<li>${i}</li>`).join('');
-      modalInstructions.innerHTML = recipe.instructions.map(i => `<li>${i}</li>`).join('');
+        <section>
+            <div class="recipe-grid" id="recipeGrid">
+                <!-- Cards dynamically populated via JavaScript -->
+            </div>
+        </section>
+    </main>
 
-      recipeModal.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    };
+    <div class="modal-overlay" id="recipeModal">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="closeModalBtn" aria-label="Close modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <img id="modalImg" class="modal-hero-img" src="" alt="Recipe Image">
+            
+            <div class="modal-content">
+                <div class="modal-badge-group" id="modalBadges"></div>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-desc" id="modalDesc"></p>
 
-    function hideModal() {
-      recipeModal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-lbl">Prep Time</div>
+                        <div class="stat-val" id="modalPrep"></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-lbl">Bake/Chill</div>
+                        <div class="stat-val" id="modalCook"></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-lbl">Skill Level</div>
+                        <div class="stat-val" id="modalLevel">Beginner</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-lbl">Servings</div>
+                        <div class="servings-stepper">
+                            <button class="step-btn" id="decServingsBtn">-</button>
+                            <span class="stat-val" id="modalServings">4</span>
+                            <button class="step-btn" id="incServingsBtn">+</button>
+                        </div>
+                    </div>
+                </div>
 
-    // Event Listeners
-    searchInput.addEventListener('input', renderRecipes);
+                <div class="recipe-details-grid">
+                    <div>
+                        <div class="section-title">
+                            <span>Ingredients</span>
+                            <small style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;">(Tap to check off)</small>
+                        </div>
+                        <ul class="ingredients-list" id="modalIngredients"></ul>
+                    </div>
 
-    filterContainer.addEventListener('click', (e) => {
-      if (e.target.classList.contains('filter-btn')) {
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        e.target.classList.add('active');
-        currentCategory = e.target.getAttribute('data-category');
+                    <div>
+                        <h3 class="section-title">Instructions</h3>
+                        <ol class="instructions-list" id="modalInstructions"></ol>
+                        
+                        <div class="beginner-tip-box" id="modalTip"></div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="action-btn" onclick="window.print()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                        Print Recipe
+                    </button>
+                    <button class="action-btn primary" id="modalFavBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        <span id="modalFavText">Save Recipe</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><strong>Celeste</strong> — Delicious gluten-free dessert baking made simple for everyone.</p>
+            <p style="margin-top: 6px; color: var(--text-light); font-size: 0.8rem;">All 15 recipes strictly 100% wheat and gluten-free. Happy Baking!</p>
+        </div>
+    </footer>
+
+    <script>
+        const recipes = [
+            {
+                id: 'chewy-choc-chip-cookies',
+                title: 'Ultimate Chewy Chocolate Chip Cookies',
+                category: 'cookies',
+                image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80',
+                description: 'Golden crisp edges with soft, chewy centers. Made easily with almond flour and brown sugar.',
+                prepTime: '15 mins',
+                cookTime: '11 mins',
+                difficulty: 'Easy',
+                baseServings: 12,
+                tags: ['Top Favorite', 'Grain-Free'],
+                ingredients: [
+                    { amount: 2, unit: 'cups', name: 'superfine almond flour' },
+                    { amount: 0.25, unit: 'cup', name: 'tapioca starch (or cornstarch)' },
+                    { amount: 0.5, unit: 'tsp', name: 'baking soda' },
+                    { amount: 0.25, unit: 'tsp', name: 'salt' },
+                    { amount: 0.33, unit: 'cup', name: 'butter, melted and cooled' },
+                    { amount: 0.5, unit: 'cup', name: 'packed brown sugar' },
+                    { amount: 0.25, unit: 'cup', name: 'granulated white sugar' },
+                    { amount: 1, unit: '', name: 'large egg' },
+                    { amount: 1, unit: 'tsp', name: 'vanilla extract' },
+                    { amount: 0.75, unit: 'cup', name: 'gluten-free dark chocolate chips' }
+                ],
+                instructions: [
+                    'Preheat your oven to 350°F (175°C) and line a baking sheet with parchment paper.',
+                    'In a large mixing bowl, whisk together the melted butter, brown sugar, and white sugar until smooth.',
+                    'Whisk in the egg and vanilla extract until well combined.',
+                    'Stir in the almond flour, tapioca starch, baking soda, and salt until a dough forms.',
+                    'Fold in the chocolate chips with a spoon.',
+                    'Scoop dough into 12 rounded balls onto your baking sheet. Flatten slightly with your hand.',
+                    'Bake for 10-12 minutes until the edges are light golden brown. Let cool on the pan for 10 minutes!'
+                ],
+                tip: 'Chilling the dough in the fridge for 15 minutes before baking helps prevent cookies from spreading too thin.'
+            },
+            {
+                id: 'flourless-lava-cakes',
+                title: 'Fudgy Flourless Dark Chocolate Lava Cakes',
+                category: 'cakes',
+                image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80',
+                description: 'Decadent chocolate cakes with warm gooey center. Naturally grain-free with simple pantry ingredients.',
+                prepTime: '15 mins',
+                cookTime: '12 mins',
+                difficulty: 'Easy',
+                baseServings: 4,
+                tags: ['Naturally GF', 'Decadent'],
+                ingredients: [
+                    { amount: 1, unit: 'cup', name: 'dark chocolate chips (certified GF)' },
+                    { amount: 0.5, unit: 'cup', name: 'unsalted butter' },
+                    { amount: 0.25, unit: 'cup', name: 'granulated sugar' },
+                    { amount: 2, unit: '', name: 'large whole eggs' },
+                    { amount: 2, unit: '', name: 'large egg yolks' },
+                    { amount: 1, unit: 'tsp', name: 'vanilla extract' },
+                    { amount: 1, unit: 'tbsp', name: 'unsweetened cocoa powder (for dusting)' }
+                ],
+                instructions: [
+                    'Preheat oven to 425°F (220°C). Grease four 6-ounce ramekins with butter and dust with cocoa powder.',
+                    'Melt the chocolate chips and butter together in a microwave in 30-second bursts, stirring until smooth.',
+                    'In a medium bowl, whisk the whole eggs, egg yolks, sugar, and vanilla until light and frothy.',
+                    'Whisk the warm chocolate mixture gently into the eggs until smooth.',
+                    'Divide batter evenly into prepared ramekins.',
+                    'Bake for 12 minutes until edges are set but center still soft.',
+                    'Run a knife around the edges, carefully flip onto a plate, and serve warm!'
+                ],
+                tip: 'Do not overbake! The key to the molten lava center is pulling them out while the center still jiggles.'
+            },
+            {
+                id: 'one-bowl-brownies',
+                title: 'Fudgy One-Bowl Chocolate Brownies',
+                category: 'cookies',
+                image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80',
+                description: 'Glossy crinkle top with ultra-fudgy centers. Made in just one bowl using 1-to-1 gluten-free flour.',
+                prepTime: '10 mins',
+                cookTime: '25 mins',
+                difficulty: 'Easy',
+                baseServings: 9,
+                tags: ['One-Bowl', 'Kid-Friendly'],
+                ingredients: [
+                    { amount: 0.5, unit: 'cup', name: 'unsalted butter, melted' },
+                    { amount: 1, unit: 'cup', name: 'granulated white sugar' },
+                    { amount: 2, unit: '', name: 'large eggs' },
+                    { amount: 1, unit: 'tsp', name: 'vanilla extract' },
+                    { amount: 0.5, unit: 'cup', name: 'unsweetened cocoa powder' },
+                    { amount: 0.5, unit: 'cup', name: '1-to-1 GF baking flour blend' },
+                    { amount: 0.25, unit: 'tsp', name: 'salt' },
+                    { amount: 0.5, unit: 'cup', name: 'chocolate chips' }
+                ],
+                instructions: [
+                    'Preheat oven to 350°F (175°C) and line an 8x8 inch baking pan with parchment paper.',
+                    'In a large bowl, whisk melted butter and sugar together for 1 full minute.',
+                    'Add eggs and vanilla; whisk vigorously until shiny and slightly thickened.',
+                    'Stir in cocoa powder, GF baking flour, and salt until smooth.',
+                    'Fold in chocolate chips.',
+                    'Pour batter into pan and smooth top with a spoon.',
+                    'Bake for 22-25 minutes until a toothpick inserted in center comes out with a few fudgy crumbs.'
+                ],
+                tip: 'Whisking the sugar and eggs thoroughly creates that iconic shiny crinkle top!'
+            },
+            {
+                id: 'lemon-sunshine-cake',
+                title: 'Lemon Sunshine GF Loaf Cake',
+                category: 'cakes',
+                image: 'https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=80',
+                description: 'Bright and tender citrus cake finished with a simple 2-ingredient sweet lemon glaze.',
+                prepTime: '15 mins',
+                cookTime: '45 mins',
+                difficulty: 'Easy',
+                baseServings: 8,
+                tags: ['Fresh Citrus', 'Great with Tea'],
+                ingredients: [
+                    { amount: 1.5, unit: 'cups', name: '1-to-1 GF baking flour' },
+                    { amount: 1, unit: 'tsp', name: 'baking powder' },
+                    { amount: 0.25, unit: 'tsp', name: 'salt' },
+                    { amount: 0.5, unit: 'cup', name: 'butter, softened' },
+                    { amount: 0.75, unit: 'cup', name: 'granulated sugar' },
+                    { amount: 2, unit: '', name: 'large eggs' },
+                    { amount: 0.33, unit: 'cup', name: 'sour cream or Greek yogurt' },
+                    { amount: 2, unit: 'tbsp', name: 'fresh lemon juice' },
+                    { amount: 1, unit: 'tbsp', name: 'lemon zest' },
+                    { amount: 0.5, unit: 'cup', name: 'powdered sugar (for glaze)' }
+                ],
+                instructions: [
+                    'Preheat oven to 350°F (175°C) and grease a standard loaf pan.',
+                    'In a small bowl, whisk GF flour, baking powder, and salt.',
+                    'In a main bowl, beat softened butter and sugar until fluffy (about 2 minutes).',
+                    'Beat in eggs one at a time, followed by lemon juice, zest, and sour cream.',
+                    'Gently stir in dry flour mixture until combined.',
+                    'Spread batter into loaf pan and bake for 40-45 minutes until golden and cake tester comes out clean.',
+                    'Mix powdered sugar with 1 tbsp lemon juice and drizzle over cooled cake.'
+                ],
+                tip: 'Sour cream adds moisture that keeps gluten-free cakes soft and tender for days.'
+            },
+            {
+                id: '3-ingredient-pb-cookies',
+                title: 'Easy 3-Ingredient Peanut Butter Cookies',
+                category: 'cookies',
+                image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80',
+                description: 'Naturally flourless, super easy peanut butter cookies. Requires zero flour or butter!',
+                prepTime: '5 mins',
+                cookTime: '10 mins',
+                difficulty: 'Super Easy',
+                baseServings: 12,
+                tags: ['Flourless', 'Quick & Easy'],
+                ingredients: [
+                    { amount: 1, unit: 'cup', name: 'creamy peanut butter' },
+                    { amount: 0.75, unit: 'cup', name: 'granulated white sugar' },
+                    { amount: 1, unit: '', name: 'large egg' },
+                    { amount: 0.5, unit: 'tsp', name: 'vanilla extract (optional)' },
+                    { amount: 1, unit: 'pinch', name: 'sea salt' }
+                ],
+                instructions: [
+                    'Preheat oven to 350°F (175°C) and line baking sheet with parchment.',
+                    'In a medium bowl, mix peanut butter, sugar, egg, and vanilla until smooth dough forms.',
+                    'Roll into 12 balls and place on baking sheet.',
+                    'Press down with a fork in a criss-cross pattern.',
+                    'Bake for 10 minutes until edges are set.',
+                    'Cool completely on baking sheet before serving so cookies set properly!'
+                ],
+                tip: 'Use standard processed creamy peanut butter (like Skippy or Jif) for the best shape.'
+            },
+            {
+                id: 'classic-lemon-bars',
+                title: 'Classic Zesty Gluten-Free Lemon Bars',
+                category: 'cookies',
+                image: 'https://images.unsplash.com/photo-1534432182912-63863115e106?auto=format&fit=crop&w=800&q=80',
+                description: 'Buttery shortbread crust beneath a sweet and tangy fresh lemon custard layer.',
+                prepTime: '20 mins',
+                cookTime: '30 mins',
+                difficulty: 'Easy',
+                baseServings: 12,
+                tags: ['Shortbread Crust', 'Crowd Favorite'],
+                ingredients: [
+                    { amount: 1, unit: 'cup', name: '1-to-1 GF baking flour (Crust)' },
+                    { amount: 0.25, unit: 'cup', name: 'powdered sugar (Crust)' },
+                    { amount: 0.5, unit: 'cup', name: 'cold butter, cubed (Crust)' },
+                    { amount: 1, unit: 'cup', name: 'granulated sugar (Filling)' },
+                    { amount: 3, unit: 'tbsp', name: '1-to-1 GF flour (Filling)' },
+                    { amount: 3, unit: '', name: 'large eggs (Filling)' },
+                    { amount: 0.5, unit: 'cup', name: 'fresh lemon juice (Filling)' }
+                ],
+                instructions: [
+                    'Preheat oven to 350°F (175°C) and line an 8x8 pan with parchment paper.',
+                    'Mix 1 cup GF flour and powdered sugar. Cut in cold cubed butter with fork or fingers until crumbly.',
+                    'Press crust dough firmly into bottom of pan. Bake for 15 minutes until light golden.',
+                    'Whisk eggs, granulated sugar, 3 tbsp GF flour, and fresh lemon juice together.',
+                    'Pour lemon mixture over warm baked crust.',
+                    'Bake for another 18-20 minutes until filling is set.',
+                    'Chill in fridge for 2 hours, dust with powdered sugar, and slice into bars!'
+                ],
+                tip: 'Chilling before slicing gives clean, sharp, beautiful squares.'
+            },
+            {
+                id: 'vanilla-fluffy-cupcakes',
+                title: 'Fluffy Vanilla Birthday Cupcakes',
+                category: 'cakes',
+                image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=800&q=80',
+                description: 'Soft, moist vanilla cupcakes crowned with easy homemade vanilla buttercream frosting.',
+                prepTime: '20 mins',
+                cookTime: '18 mins',
+                difficulty: 'Easy',
+                baseServings: 12,
+                tags: ['Party Favorite', 'Fluffy'],
+                ingredients: [
+                    { amount: 1.5, unit: 'cups', name: '1-to-1 GF baking flour' },
+                    { amount: 1, unit: 'cup', name: 'granulated sugar' },
+                    { amount: 1.5, unit: 'tsp', name: 'baking powder' },
+                    { amount: 0.25, unit: 'tsp', name: 'salt' },
+                    { amount: 0.33, unit: 'cup', name: 'butter, melted' },
+                    { amount: 0.5, unit: 'cup', name: 'milk' },
+                    { amount: 2, unit: '', name: 'large eggs' },
+                    { amount: 2, unit: 'tsp', name: 'vanilla extract' }
+                ],
+                instructions: [
+                    'Preheat oven to 350°F (175°C) and line a 12-cup muffin pan with paper liners.',
+                    'Whisk dry ingredients (GF flour, sugar, baking powder, salt) in a large bowl.',
+                    'Add melted butter, milk, eggs, and vanilla extract.',
+                    'Whisk for 1 minute until smooth batter forms.',
+                    'Divide batter evenly into cupcake liners (fill 2/3 full).',
+                    'Bake for 16-18 minutes until toothpick comes out clean.',
+                    'Cool completely before frosting with whipped butter and powdered sugar!'
+                ],
+                tip: 'Do not fill liners more than 2/3 full so cupcakes bake up rounded and do not spill over.'
+            },
+            {
+                id: 'cinnamon-snickerdoodles',
+                title: 'Cinnamon Sugar Snickerdoodles',
+                category: 'cookies',
+                image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=80',
+                description: 'Pillow-soft cookies rolled in sweet cinnamon sugar with classic buttery flavor.',
+                prepTime: '15 mins',
+                cookTime: '10 mins',
+                difficulty: 'Easy',
+                baseServings: 14,
+                tags: ['Cinnamon', 'Soft-Baked'],
+                ingredients: [
+                    { amount: 1.5, unit: 'cups', name: '1-to-1 GF baking flour' },
+                    { amount: 0.5, unit: 'tsp', name: 'baking soda' },
+                    { amount: 0.5, unit: 'tsp', name: 'cream of tartar' },
+                    { amount: 0.5, unit: 'cup', name: 'butter, softened' },
+                    { amount: 0.66, unit: 'cup', name: 'granulated sugar' },
+                    { amount: 1, unit: '', name: 'large egg' },
+                    { amount: 1, unit: 'tsp', name: 'vanilla extract' },
+                    { amount: 2, unit: 'tbsp', name: 'sugar + 1 tsp cinnamon (Coating)' }
+                ],
+                instructions: [
+                    'Preheat oven to 350°F (175°C) and line sheet with parchment.',
+                    'Mix flour, baking soda, cream of tartar, and pinch of salt.',
+                    'Beat butter and sugar together until light and fluffy.',
+                    'Add egg and vanilla; beat well.',
+                    'Stir dry ingredients into wet until dough forms.',
+                    'Roll dough into 14 balls, roll each ball in cinnamon sugar mixture.',
+                    'Bake 9-11 minutes. Let cool on pan for 5 minutes.'
+                ],
+                tip: 'Cream of tartar gives snickerdoodles their signature tangy flavor and chewy texture.'
+            },
+            {
+                id: 'berry-pavlova-wreath',
+                title: 'Fresh Berry Cloud Pavlova',
+                category: 'nobake',
+                image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80',
+                description: 'Crisp meringue shell with a marshmallow center, topped with whipped cream & berries.',
+                prepTime: '20 mins',
+                cookTime: '75 mins',
+                difficulty: 'Easy',
+                baseServings: 8,
+                tags: ['Naturally GF', 'Light & Air'],
+                ingredients: [
+                    { amount: 4, unit: '', name: 'large egg whites, room temp' },
+                    { amount: 1, unit: 'cup', name: 'superfine white sugar' },
+                    { amount: 1, unit: 'tsp', name: 'white vinegar' },
+                    { amount: 1, unit: 'tbsp', name: 'cornstarch' },
+                    { amount: 1, unit: 'tsp', name: 'vanilla extract' },
+                    { amount: 1, unit: 'cup', name: 'heavy whipping cream' },
+                    { amount: 1.5, unit: 'cups', name: 'fresh mixed berries' }
+                ],
+                instructions: [
+                    'Preheat oven to 250°F (120°C) and line sheet with parchment paper.',
+                    'Whip egg whites on medium speed until soft peaks form.',
+                    'Slowly add sugar 1 tablespoon at a time while whipping on high speed until stiff glossy peaks form.',
+                    'Fold in vinegar, cornstarch, and vanilla gently.',
+                    'Spoon onto parchment paper into an 8-inch circle mound.',
+                    'Bake 75 minutes. Turn off oven and let cool inside oven completely.',
+                    'Top with whipped cream and fresh berries before serving!'
+                ],
+                tip: 'Meringues are 100% gluten-free by nature! Ensure your bowl is totally clean before whipping whites.'
+            },
+            {
+                id: 'dark-chocolate-mousse',
+                title: 'Silky 4-Ingredient Chocolate Mousse',
+                category: 'nobake',
+                image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80',
+                description: 'Ultra-creamy, melt-in-your-mouth chocolate dessert served chilled in individual cups.',
+                prepTime: '15 mins',
+                cookTime: '2 hrs chill',
+                difficulty: 'Easy',
+                baseServings: 4,
+                tags: ['No Bake', 'Silky Smooth'],
+                ingredients: [
+                    { amount: 1, unit: 'cup', name: 'dark chocolate chips' },
+                    { amount: 2, unit: 'tbsp', name: 'butter' },
+                    { amount: 1.25, unit: 'cups', name: 'heavy whipping cream (divided)' },
+                    { amount: 2, unit: 'tbsp', name: 'powdered sugar' },
+                    { amount: 1, unit: 'tsp', name: 'vanilla extract' }
+                ],
+                instructions: [
+                    'Melt chocolate chips, butter, and 1/4 cup heavy cream in microwave (30 sec intervals), stir smooth.',
+                    'Let chocolate cool to room temperature for 10 minutes.',
+                    'In a separate bowl, whip remaining 1 cup heavy cream, powdered sugar, and vanilla to stiff peaks.',
+                    'Gently fold 1/3 of whipped cream into chocolate to lighten it.',
+                    'Fold in remaining whipped cream until smooth and fluffy.',
+                    'Spoon into dessert glasses and chill in fridge for 2 hours.'
+                ],
+                tip: 'Cooling the melted chocolate slightly prevents it from deflating your whipped cream.'
+            },
+            {
+                id: 'pb-chocolate-pie',
+                title: 'No-Bake Peanut Butter Pie',
+                category: 'nobake',
+                image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80',
+                description: 'Rich peanut butter filling inside a simple 2-ingredient GF chocolate cookie crust.',
+                prepTime: '20 mins',
+                cookTime: '3 hrs chill',
+                difficulty: 'Super Easy',
+                baseServings: 8,
+                tags: ['No Bake', 'Crowd Pleaser'],
+                ingredients: [
+                    { amount: 1.5, unit: 'cups', name: 'GF chocolate cookie crumbs' },
+                    { amount: 5, unit: 'tbsp', name: 'butter, melted (Crust)' },
+                    { amount: 1, unit: 'cup', name: 'creamy peanut butter' },
+                    { amount: 8, unit: 'oz', name: 'cream cheese, softened' },
+                    { amount: 1, unit: 'cup', name: 'powdered sugar' },
+                    { amount: 1, unit: 'cup', name: 'heavy whipping cream (whipped)' }
+                ],
+                instructions: [
+                    'Mix GF cookie crumbs and melted butter. Press into bottom and sides of 9-inch pie dish.',
+                    'Beat softened cream cheese, peanut butter, and powdered sugar until smooth.',
+                    'Whip heavy cream in separate bowl until stiff peaks form.',
+                    'Fold whipped cream into peanut butter mixture until fluffy.',
+                    'Spoon into chocolate crust and smooth top.',
+                    'Chill in refrigerator for 3 hours before slicing!'
+                ],
+                tip: 'Use pre-packaged gluten-free chocolate sandwich cookies crushed in a bag for the crust.'
+            },
+            {
+                id: 'raspberry-almond-tart',
+                title: 'Fresh Raspberry Almond Tart',
+                category: 'cakes',
+                image: 'https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=80',
+                description: 'Press-in almond flour crust filled with sweet cream mascarpone and fresh raspberries.',
+                prepTime: '20 mins',
+                cookTime: '12 mins',
+                difficulty: 'Easy',
+                baseServings: 8,
+                tags: ['Press-In Crust', 'Elegant'],
+                ingredients: [
+                    { amount: 1.5, unit: 'cups', name: 'almond flour (Crust)' },
+                    { amount: 3, unit: 'tbsp', name: 'melted butter (Crust)' },
+                    { amount: 2, unit: 'tbsp', name: 'honey or maple syrup (Crust)' },
+                    { amount: 8, unit: 'oz', name: 'mascarpone or cream cheese (Filling)' },
+                    { amount: 0.25, unit: 'cup', name: 'honey or powdered sugar (Filling)' },
+                    { amount: 1, unit: 'tsp', name: 'vanilla extract' },
+                    { amount: 2, unit: 'cups', name: 'fresh raspberries' }
+                ],
+                instructions: [
+                    'Preheat oven to 350°F (175°C). Mix almond flour, melted butter, and 2 tbsp honey until dough forms.',
+                    'Press dough into bottom and sides of 9-inch tart pan with fingers.',
+                    'Bake crust 10-12 minutes until light golden. Cool completely.',
+                    'Beat mascarpone, honey, and vanilla until smooth cream.',
+                    'Spread filling into cooled crust.',
+                    'Arrange fresh raspberries on top and serve!'
+                ],
+                tip: 'Pressing dough straight into the pan means no rolling pin required!'
+            },
+            {
+                id: 'mango-panna-cotta',
+                title: 'Mango Coconut Milk Panna Cotta',
+                category: 'nobake',
+                image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80',
+                description: 'Silky smooth tropical dessert made with coconut milk and topped with sweet mango puree.',
+                prepTime: '15 mins',
+                cookTime: '4 hrs chill',
+                difficulty: 'Easy',
+                baseServings: 4,
+                tags: ['Dairy-Free Option', 'Tropical'],
+                ingredients: [
+                    { amount: 1, unit: 'can (13.5oz)', name: 'full-fat coconut milk' },
+                    { amount: 0.33, unit: 'cup', name: 'sugar or maple syrup' },
+                    { amount: 1, unit: 'tsp', name: 'vanilla extract' },
+                    { amount: 2.25, unit: 'tsp', name: 'unflavored gelatin powder' },
+                    { amount: 3, unit: 'tbsp', name: 'cold water' },
+                    { amount: 1, unit: 'cup', name: 'pureed ripe mango' }
+                ],
+                instructions: [
+                    'Sprinkle gelatin over 3 tbsp cold water in a bowl; let sit 5 mins to bloom.',
+                    'Heat coconut milk and sugar in saucepan until warm (do not boil).',
+                    'Stir bloomed gelatin into warm coconut milk until completely dissolved.',
+                    'Stir in vanilla extract.',
+                    'Pour into 4 ramekins or glasses; chill in fridge 4 hours until set.',
+                    'Spoon sweet mango puree over top before serving!'
+                ],
+                tip: 'Blooming gelatin in cold water first ensures a lump-free, velvety panna cotta.'
+            },
+            {
+                id: 'carrot-cake-bars',
+                title: 'Spiced Carrot Cake Squares',
+                category: 'cakes',
+                image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80',
+                description: 'Warmly spiced carrot cake squares topped with simple cream cheese icing.',
+                prepTime: '20 mins',
+                cookTime: '30 mins',
+                difficulty: 'Easy',
+                baseServings: 12,
+                tags: ['Warm Spice', 'Moist'],
+                ingredients: [
+                    { amount: 1.5, unit: 'cups', name: '1-to-1 GF baking flour' },
+                    { amount: 1, unit: 'tsp', name: 'baking soda' },
+                    { amount: 1, unit: 'tsp', name: 'ground cinnamon' },
+                    { amount: 0.5, unit: 'tsp', name: 'salt' },
+                    { amount: 0.75, unit: 'cup', name: 'granulated sugar' },
+                    { amount: 0.5, unit: 'cup', name: 'vegetable oil or melted coconut oil' },
+                    { amount: 2, unit: '', name: 'large eggs' },
+                    { amount: 1.5, unit: 'cups', name: 'grated fresh carrots' },
+                    { amount: 4, unit: 'oz', name: 'cream cheese + 0.5 cup powdered sugar (Icing)' }
+                ],
+                instructions: [
+                    'Preheat oven to 350°F (175°C) and line 8x8 baking dish.',
+                    'Whisk GF flour, baking soda, cinnamon, and salt in bowl.',
+                    'In main bowl, whisk sugar, oil, and eggs.',
+                    'Stir dry ingredients into wet, then fold in grated carrots.',
+                    'Pour into dish and bake 28-32 minutes until toothpick comes clean.',
+                    'Beat cream cheese with powdered sugar and spread over cooled cake.'
+                ],
+                tip: 'Grate carrots finely using the small side of a box grater for maximum tenderness.'
+            },
+            {
+                id: 'salted-caramel-pudding',
+                title: 'Homemade Salted Caramel Pudding',
+                category: 'nobake',
+                image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80',
+                description: 'Rich stovetop butterscotch caramel pudding finished with flaky sea salt.',
+                prepTime: '15 mins',
+                cookTime: '2 hrs chill',
+                difficulty: 'Easy',
+                baseServings: 4,
+                tags: ['Stovetop', 'Comfort Dessert'],
+                ingredients: [
+                    { amount: 2.5, unit: 'cups', name: 'whole milk' },
+                    { amount: 0.66, unit: 'cup', name: 'packed brown sugar' },
+                    { amount: 3, unit: 'tbsp', name: 'cornstarch' },
+                    { amount: 0.25, unit: 'tsp', name: 'salt' },
+                    { amount: 2, unit: '', name: 'large egg yolks' },
+                    { amount: 2, unit: 'tbsp', name: 'butter' },
+                    { amount: 2, unit: 'tsp', name: 'vanilla extract' },
+                    { amount: 0.5, unit: 'tsp', name: 'flaky sea salt (for topping)' }
+                ],
+                instructions: [
+                    'In saucepan, whisk brown sugar, cornstarch, salt, egg yolks, and milk.',
+                    'Cook over medium heat, whisking constantly, until mixture thickens and bubbles (about 8-10 mins).',
+                    'Remove from heat; stir in butter and vanilla until melted and smooth.',
+                    'Pour into 4 serving cups.',
+                    'Chill in fridge for 2 hours.',
+                    'Sprinkle with flaky sea salt right before enjoying!'
+                ],
+                tip: 'Cornstarch is naturally gluten-free and thickens pudding into a luxurious texture without flour.'
+            }
+        ];
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+        let savedRecipeIds = JSON.parse(localStorage.getItem('celeste_saved') || '[]');
+        let activeRecipe = null;
+        let activeServings = 4;
+
+        // DOM Elements
+        const recipeGrid = document.getElementById('recipeGrid');
+        const searchInput = document.getElementById('searchInput');
+        const categoryTabs = document.getElementById('categoryTabs');
+        const savedCountEl = document.getElementById('savedCount');
+        const viewSavedBtn = document.getElementById('viewSavedBtn');
+
+        // Modal Elements
+        const recipeModal = document.getElementById('recipeModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalPrep = document.getElementById('modalPrep');
+        const modalCook = document.getElementById('modalCook');
+        const modalLevel = document.getElementById('modalLevel');
+        const modalServings = document.getElementById('modalServings');
+        const modalBadges = document.getElementById('modalBadges');
+        const modalIngredients = document.getElementById('modalIngredients');
+        const modalInstructions = document.getElementById('modalInstructions');
+        const modalTip = document.getElementById('modalTip');
+        const modalFavBtn = document.getElementById('modalFavBtn');
+        const modalFavText = document.getElementById('modalFavText');
+        const decServingsBtn = document.getElementById('decServingsBtn');
+        const incServingsBtn = document.getElementById('incServingsBtn');
+
+        function renderRecipes() {
+            recipeGrid.innerHTML = '';
+
+            const filtered = recipes.filter(item => {
+                const matchesCat = (currentCategory === 'all') ||
+                                   (currentCategory === 'saved' ? savedRecipeIds.includes(item.id) : item.category === currentCategory);
+                
+                const q = searchQuery.toLowerCase().trim();
+                const matchesSearch = !q || 
+                                      item.title.toLowerCase().includes(q) ||
+                                      item.description.toLowerCase().includes(q) ||
+                                      item.ingredients.some(ing => ing.name.toLowerCase().includes(q));
+
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                recipeGrid.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No gluten-free recipes found</h3>
+                        <p>Try adjusting your search terms or picking a different recipe category.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(recipe => {
+                const isSaved = savedRecipeIds.includes(recipe.id);
+                const card = document.createElement('article');
+                card.className = 'recipe-card';
+                
+                let categoryLabel = 'Treat';
+                if (recipe.category === 'cakes') categoryLabel = 'Cakes & Tarts';
+                if (recipe.category === 'cookies') categoryLabel = 'Cookies & Bars';
+                if (recipe.category === 'nobake') categoryLabel = 'No-Bake & Chilled';
+
+                card.innerHTML = `
+                    <div class="card-img-wrap">
+                        <img class="card-img" src="${recipe.image}" alt="${recipe.title}" loading="lazy">
+                        <button class="card-fav-btn ${isSaved ? 'active' : ''}" data-id="${recipe.id}" title="Save recipe">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category-badge">${categoryLabel}</span>
+                        <h3 class="card-title">${recipe.title}</h3>
+                        <p class="card-desc">${recipe.description}</p>
+                        <div class="card-meta">
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>${recipe.prepTime} prep</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 13.87A8 8 0 0 1 12 4a8 8 0 0 1 6 9.87"></path><line x1="12" y1="12" x2="12" y2="16"></line></svg>
+                                <span>${recipe.difficulty}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                card.querySelector('.card-fav-btn').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleSaveRecipe(recipe.id);
+                });
+
+                card.addEventListener('click', () => openModal(recipe));
+                recipeGrid.appendChild(card);
+            });
+
+            updateSavedBadgeCount();
+        }
+
+        function openModal(recipe) {
+            activeRecipe = recipe;
+            activeServings = recipe.baseServings;
+
+            modalImg.src = recipe.image;
+            modalImg.alt = recipe.title;
+            modalTitle.textContent = recipe.title;
+            modalDesc.textContent = recipe.description;
+            modalPrep.textContent = recipe.prepTime;
+            modalCook.textContent = recipe.cookTime;
+            modalLevel.textContent = recipe.difficulty;
+            modalServings.textContent = activeServings;
+
+            modalBadges.innerHTML = recipe.tags.map(t => `<span class="card-category-badge">${t}</span>`).join('');
+
+            renderModalIngredients();
+
+            modalInstructions.innerHTML = recipe.instructions.map(step => `
+                <li class="step-item">
+                    <p class="step-text">${step}</p>
+                </li>
+            `).join('');
+
+            modalTip.innerHTML = `<strong>Beginner Tip:</strong> ${recipe.tip}`;
+
+            updateModalFavButton();
+            recipeModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function renderModalIngredients() {
+            if (!activeRecipe) return;
+
+            const ratio = activeServings / activeRecipe.baseServings;
+
+            modalIngredients.innerHTML = activeRecipe.ingredients.map(ing => {
+                let amountText = '';
+                if (ing.amount) {
+                    const scaled = ing.amount * ratio;
+                    // Format fractional numbers nicely for beginner baking
+                    if (scaled === 0.25) amountText = '1/4';
+                    else if (scaled === 0.33 || scaled.toFixed(2) === '0.33') amountText = '1/3';
+                    else if (scaled === 0.5) amountText = '1/2';
+                    else if (scaled === 0.66 || scaled.toFixed(2) === '0.66') amountText = '2/3';
+                    else if (scaled === 0.75) amountText = '3/4';
+                    else if (Number.isInteger(scaled)) amountText = scaled.toString();
+                    else amountText = scaled.toFixed(1);
+                }
+
+                return `
+                    <li class="ingredient-row" onclick="this.classList.toggle('checked')">
+                        <div class="ingredient-check">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <span class="ingredient-text"><strong class="ingredient-amount">${amountText} ${ing.unit}</strong> ${ing.name}</span>
+                    </li>
+                `;
+            }).join('');
+        }
+
+        function closeModal() {
+            recipeModal.classList.remove('active');
+            document.body.style.overflow = '';
+            activeRecipe = null;
+        }
+
+        function toggleSaveRecipe(id) {
+            if (savedRecipeIds.includes(id)) {
+                savedRecipeIds = savedRecipeIds.filter(i => i !== id);
+            } else {
+                savedRecipeIds.push(id);
+            }
+            localStorage.setItem('celeste_saved', JSON.stringify(savedRecipeIds));
+            renderRecipes();
+            if (activeRecipe && activeRecipe.id === id) {
+                updateModalFavButton();
+            }
+        }
+
+        function updateSavedBadgeCount() {
+            savedCountEl.textContent = savedRecipeIds.length;
+        }
+
+        function updateModalFavButton() {
+            if (!activeRecipe) return;
+            const isSaved = savedRecipeIds.includes(activeRecipe.id);
+            if (isSaved) {
+                modalFavBtn.classList.add('primary');
+                modalFavText.textContent = 'Saved in Favorites';
+            } else {
+                modalFavBtn.classList.remove('primary');
+                modalFavText.textContent = 'Save Recipe';
+            }
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderRecipes();
+        });
+
+        categoryTabs.addEventListener('click', (e) => {
+            if (e.target.classList.contains('tab-btn')) {
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                currentCategory = e.target.dataset.category;
+                renderRecipes();
+            }
+        });
+
+        viewSavedBtn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            currentCategory = 'saved';
+            renderRecipes();
+        });
+
+        closeModalBtn.addEventListener('click', closeModal);
+        recipeModal.addEventListener('click', (e) => {
+            if (e.target === recipeModal) closeModal();
+        });
+
+        decServingsBtn.addEventListener('click', () => {
+            if (activeServings > 1) {
+                activeServings--;
+                modalServings.textContent = activeServings;
+                renderModalIngredients();
+            }
+        });
+
+        incServingsBtn.addEventListener('click', () => {
+            if (activeServings < 30) {
+                activeServings++;
+                modalServings.textContent = activeServings;
+                renderModalIngredients();
+            }
+        });
+
+        modalFavBtn.addEventListener('click', () => {
+            if (activeRecipe) {
+                toggleSaveRecipe(activeRecipe.id);
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && recipeModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Initialize application
         renderRecipes();
-      }
-    });
-
-    closeModal.addEventListener('click', hideModal);
-
-    recipeModal.addEventListener('click', (e) => {
-      if (e.target === recipeModal) hideModal();
-    });
-
-    // Close Modal on Escape Key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && recipeModal.classList.contains('active')) {
-        hideModal();
-      }
-    });
-
-    // Initial Load
-    renderRecipes();
-  </script>
+    </script>
 </body>
 </html>
